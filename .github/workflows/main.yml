@@ -1,0 +1,13 @@
+name: Build Friday APK
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build APK with Buildozer
+        uses: ArtemGr/kivy-buildozer-action@v1.2
+        with:
+          save_bin: true
+          
